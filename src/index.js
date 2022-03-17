@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { store } from './state/store';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* Wrap the root app with a provider, to enable every component to have an access to the store */}
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
